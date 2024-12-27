@@ -10,9 +10,7 @@ sv = Service('tarot', help_cmd='塔罗牌帮助')
 
 @sv.on_match('塔罗牌')
 async def send_playerInfo(bot, ev):
-    await bot.send(ev, '请稍等，正在洗牌中')
     cards = await read_config()
-
     indices = random.sample(range(1, 78), 4)
     card_keys = list(cards.keys())
     shuffle(card_keys)
