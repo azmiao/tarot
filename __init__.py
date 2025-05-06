@@ -27,8 +27,7 @@ async def send_tarot(bot: YuiChyan, ev: CQEvent):
         # 获取含义 | 其中小阿卡纳分正位和逆位
         if isinstance(cards[card_key], dict):
             rand = random.choice(['正位', '逆位'])
-            card_key += f'（{rand}）'
-            card_value = cards[card_key][rand]
+            card_value = cards[card_key][rand] + f'（{rand}）'
         else:
             card_value = cards[card_key]
         # 生成消息节点内容
